@@ -1,4 +1,4 @@
-# TripInterview
+# TripActionsInterview
 
 Tests have been written using Maven Library and TestNG. 
 
