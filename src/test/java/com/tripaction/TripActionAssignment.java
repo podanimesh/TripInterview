@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -68,8 +69,10 @@ public class TripActionAssignment {
 		WebElement selector =	wait.until(ExpectedConditions.visibilityOfElementLocated((By.cssSelector(".js-hprt-table-cheapest-block .hprt-nos-select"))));
 		Select roomCountSelector = new Select(selector);
 		roomCountSelector.selectByValue("1");	
-		//click Reserve Button
-		driver.findElement(By.cssSelector(".js-reservation-button")).click();
+		//click Reserve Button on Top
+		((JavascriptExecutor)driver).executeScript("window.scrollTo(document.body.scrollHeight,0)");	
+		driver.findElement(By.id("hp_book_now_button")).click();
+		
 		
 
 	}
